@@ -1,0 +1,112 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // toggle
+      "alt-x": "command_palette::Toggle",
+      "ctrl-x ctrl-f": "file_finder::Toggle",
+      "ctrl-x ctrl-t": "terminal_panel::Toggle",
+      "ctrl-x ctrl-v": "git_panel::ToggleFocus",
+      "ctrl-c ctrl-p": "project_symbols::Toggle",
+      // task
+      "ctrl-t tab": "task::Rerun",
+      "ctrl-t ctrl-b": [
+        "task::Spawn",
+        {
+          "task_name": "cargo build",
+        },
+      ],
+      "ctrl-t ctrl-c": [
+        "task::Spawn",
+        {
+          "task_name": "cargo clippy (fix)",
+        },
+      ],
+      "ctrl-t ctrl-d": [
+        "task::Spawn",
+        {
+          "task_name": "cargo clippy",
+        },
+      ],
+      "ctrl-t ctrl-f": [
+        "task::Spawn",
+        {
+          "task_name": "cargo fmt",
+        },
+      ],
+      "ctrl-t ctrl-k": [
+        "task::Spawn",
+        {
+          "task_name": "cargo check",
+        },
+      ],
+      "ctrl-t ctrl-r": [
+        "task::Spawn",
+        {
+          "task_name": "cargo run",
+        },
+      ],
+      "ctrl-t ctrl-t": [
+        "task::Spawn",
+        {
+          "task_name": "cargo test",
+        },
+      ],
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // movement / mark
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine",
+      "alt-b": "editor::MoveToPreviousSubwordStart",
+      "alt-f": "editor::MoveToNextSubwordEnd",
+      "ctrl-x h": "editor::SelectAll",
+      "ctrl-space": "editor::SetMark",
+      "ctrl-space left": "editor::SelectLeft",
+      "ctrl-space right": "editor::SelectRight",
+      "ctrl-space up": "editor::SelectUp",
+      "ctrl-space down": "editor::SelectDown",
+      "ctrl-space alt-b": "editor::SelectToPreviousSubwordStart",
+      "ctrl-space alt-f": "editor::SelectToNextSubwordEnd",
+      "ctrl-space ctrl-b": "editor::SelectLeft",
+      "ctrl-space ctrl-f": "editor::SelectRight",
+      "ctrl-space ctrl-p": "editor::SelectUp",
+      "ctrl-space ctrl-n": "editor::SelectDown",
+      "ctrl-space ctrl-a": "editor::SelectToBeginningOfLine",
+      "ctrl-space ctrl-e": "editor::SelectToEndOfLine",
+      "ctrl-space alt-v": "editor::SelectPageUp",
+      "ctrl-space ctrl-v": "editor::SelectPageDown",
+      // copy / cut / paste / delete
+      "ctrl-w": "editor::Cut",
+      "alt-w": "editor::Copy",
+      "ctrl-y": "editor::Paste",
+      "ctrl-d": "editor::Delete",
+      "alt-d": "editor::DeleteToNextSubwordEnd",
+      "alt-delete": "editor::DeleteToPreviousSubwordStart",
+      "ctrl-u": "editor::DeleteToBeginningOfLine",
+      "ctrl-k": "editor::DeleteToEndOfLine",
+      // control
+      "ctrl-_": "editor::Undo",
+      "ctrl-?": "editor::Redo",
+      "ctrl-g": "editor::Cancel",
+      // jump to line
+      "alt-g alt-g": "go_to_line::Toggle",
+      // code
+      "alt-.": "editor::GoToDefinition",
+      "alt->": "pane::GoForward",
+      "alt-<": "pane::GoBack",
+      "ctrl-c ctrl-a": "editor::ToggleCodeActions",
+      "ctrl-c ctrl-e": "editor::GoToDeclaration",
+      "ctrl-c ctrl-d": "editor::GoToDefinition",
+      "ctrl-c ctrl-f": "editor::Format",
+      "ctrl-c ctrl-i": "editor::GoToImplementation",
+      "ctrl-c ctrl-j": "outline::Toggle",
+      "ctrl-c ctrl-k": "editor::Hover",
+      "ctrl-c ctrl-x": "editor::FindAllReferences",
+      "ctrl-c ctrl-r": "editor::Rename",
+      "ctrl-c ctrl-t": "editor::GoToTypeDefinition",
+    },
+  },
+]

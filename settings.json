@@ -1,0 +1,74 @@
+{
+  "agent": {
+    "model_parameters": [],
+    "enable_feedback": false,
+  },
+  "disable_ai": true,
+  "ui_font_family": "Maple Mono NF CN",
+  "buffer_font_family": "Maple Mono NF CN",
+  "icon_theme": "Catppuccin Latte",
+  "base_keymap": "Emacs",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha (Blur) [Light]",
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_keep_preview_on_code_navigation": true,
+  },
+  "languages": {
+    "Rust": {
+      "colorize_brackets": true,
+      "enable_language_server": true,
+      "ensure_final_newline_on_save": true,
+      "extend_comment_on_newline": false,
+      "format_on_save": "on",
+      "hard_tabs": false,
+      "tab_size": 4,
+      "remove_trailing_whitespace_on_save": true,
+      "use_autoclose": false,
+      "use_auto_surround": false,
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "cachePriming": {
+          "enable": true,
+        },
+        "cargo": {
+          "buildScripts": {
+            "enable": true,
+          },
+        },
+        "checkOnSave": true,
+        "diagnostics": {
+          "enable": true,
+        },
+        "hover": {
+          "actions": {
+            "references": {
+              "enable": true,
+            },
+          },
+        },
+        "procMacro": {
+          "enable": true,
+        },
+        "workspace": {
+          "symbol": {
+            "search": {
+              "scope": "workspace",
+            },
+          },
+        },
+        "references": {
+          "excludeImports": true,
+        },
+      },
+    },
+  },
+}
