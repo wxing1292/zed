@@ -1,0 +1,184 @@
+{
+  "agent": {
+    "model_parameters": [],
+    "enable_feedback": false,
+  },
+  "disable_ai": true,
+  "ui_font_family": "Maple Mono NF CN",
+  "buffer_font_family": "Maple Mono NF CN",
+  "icon_theme": "Catppuccin Latte",
+  "base_keymap": "Emacs",
+  "ui_font_size": 18,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha (Blur) [Light]",
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_keep_preview_on_code_navigation": true,
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+  },
+  "format_on_save": "on",
+  "languages": {
+    "Rust": {
+      "colorize_brackets": true,
+      "enable_language_server": true,
+      "ensure_final_newline_on_save": true,
+      "extend_comment_on_newline": false,
+      "formatter": "language_server",
+      "hard_tabs": false,
+      "tab_size": 4,
+      "remove_trailing_whitespace_on_save": true,
+      "use_autoclose": false,
+      "use_auto_surround": false,
+    },
+    "TOML": {
+      "formatter": {
+        "external": {
+          "command": "taplo",
+          "arguments": ["fmt", "-"],
+        },
+      },
+    },
+    "Go": {
+      "language_servers": ["gopls"],
+      "formatter": {
+        "external": {
+          "command": "goimports",
+          "arguments": ["-w", "{buffer_path}"],
+        },
+      },
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "completion": {
+          "postfix": { "enable": true },
+          "snippets": {
+            "custom": {
+              "Arc::new": {
+                "postfix": "arc",
+                "body": ["Arc::new(${receiver})"],
+                "requires": "std::sync::Arc",
+                "scope": "expr",
+              },
+              "Rc::new": {
+                "postfix": "rc",
+                "body": ["Rc::new(${receiver})"],
+                "requires": "std::rc::Rc",
+                "scope": "expr",
+              },
+              "Some": {
+                "postfix": "some",
+                "body": ["Some(${receiver})"],
+                "scope": "expr",
+              },
+              "Ok": {
+                "postfix": "ok",
+                "body": ["Ok(${receiver})"],
+                "scope": "expr",
+              },
+              "Err": {
+                "postfix": "err",
+                "body": ["Err(${receiver})"],
+                "scope": "expr",
+              },
+              "Box::new": {
+                "postfix": "box",
+                "body": ["Box::pin(${receiver})"],
+                "requires": "std::boxed::Box",
+                "scope": "expr",
+              },
+              "Box::pin": {
+                "postfix": "pinbox",
+                "body": ["Box::pin(${receiver})"],
+                "requires": "std::boxed::Box",
+                "scope": "expr",
+              },
+              "expect": {
+                "postfix": "expect",
+                "body": ["${receiver}.expect(\"TODO\")"],
+                "scope": "expr",
+              },
+            },
+          },
+        },
+      },
+      "settings": {
+        "cargo": {
+          "buildScripts": {
+            "enable": true,
+          },
+        },
+        "diagnostics": {
+          "enable": true,
+        },
+        "files": {
+          "excludeDirs": ["target"],
+        },
+        "hover": {
+          "actions": {
+            "references": {
+              "enable": true,
+            },
+          },
+        },
+        "inlayHints": {
+          "closureReturnTypeHints": {
+            "enable": true,
+          },
+        },
+        "procMacro": {
+          "enable": true,
+        },
+        "workspace": {
+          "symbol": {
+            "search": {
+              "scope": "workspace",
+            },
+          },
+        },
+        "references": {
+          "excludeImports": true,
+        },
+        "imports": {
+          "granularity": {
+            "group": "item",
+          },
+          "group": {
+            "enable": true,
+          },
+          "prefix": "self",
+        },
+        "rustfmt": {
+          "overrideCommand": ["rustup", "run", "nightly", "rustfmt"],
+          "rangeFormatting": {
+            "enable": true,
+          },
+        },
+        "check": {
+          "command": "check",
+          "allTargets": true,
+          "allFeatures": true,
+        },
+      },
+    },
+    "gopls": {
+      "settings": {
+        "gopls": {
+          "gofumpt": true,
+          "staticcheck": true,
+          "usePlaceholders": true,
+        },
+      },
+    },
+  },
+}
